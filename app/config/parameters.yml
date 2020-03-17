@@ -1,12 +1,13 @@
 # This file is auto-generated during the composer install
 parameters:
     database_host: 127.0.0.1
-    database_port: null
-    database_name: symfony
+    database_driver: pdo_mysql
+    database_port: 3306
+    database_name: Tareast
     database_user: root
-    database_password: null
+    database_password: 1234
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
     mailer_password: null
-    secret: 8c4b196ef3cdd3b8c02e5f49c65a3331fbaf3f2d
+    secret: 02457dcf4f64717f2cadbf90c7192f7371a42294

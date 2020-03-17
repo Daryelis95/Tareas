@@ -1,3 +1,7 @@
+tarea:
+    resource: "@TareaBundle/Resources/config/routing.yml"
+    prefix:   /tarea
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

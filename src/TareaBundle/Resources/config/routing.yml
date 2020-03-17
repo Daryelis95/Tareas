@@ -1,0 +1,7 @@
+tarea_homepage:
+    path:     /
+    defaults: { _controller: TareaBundle:Default:index }
+
+tarea_article:
+    path:     /article
+    defaults: { _controller: TareaBundle:Default:create }

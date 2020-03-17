@@ -18,4 +18,16 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
         ]);
     }
+
+    /**
+     * @Route("/template/bootstrap", name="homepage")
+     */
+    public function templateAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render(
+            'layout.bootstrap.html.twig',
+             array()
+        );
+    }
 }
