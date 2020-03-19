@@ -2,6 +2,13 @@ tarea_homepage:
     path:     /
     defaults: { _controller: TareaBundle:Default:index }
 
-tarea_article:
-    path:     /article
-    defaults: { _controller: TareaBundle:Default:create }
+
+tarea_create:
+    path:     /create
+    defaults: { _controller: TareaBundle:Registro:create }
+
+
+tarea_mostar:
+    path:     /mostrar
+    defaults: { _controller: TareaBundle:Registro:mostrar }
+

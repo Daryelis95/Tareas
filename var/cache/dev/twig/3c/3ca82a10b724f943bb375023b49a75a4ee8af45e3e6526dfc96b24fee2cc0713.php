@@ -15,14 +15,32 @@ class __TwigTemplate_da93ca26a698afe539b81607c346a65315b4cfc36cad74c454cb7048d31
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f4a72b7b1c55c1deeef7b9cec31ff383ced0d063eb5aeeeab1f099f1dbb9f03a = $this->env->getExtension("native_profiler");
-        $__internal_f4a72b7b1c55c1deeef7b9cec31ff383ced0d063eb5aeeeab1f099f1dbb9f03a->enter($__internal_f4a72b7b1c55c1deeef7b9cec31ff383ced0d063eb5aeeeab1f099f1dbb9f03a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TareaBundle:Default:index.html.twig"));
+        $__internal_5e652e6d0890941f34284954b098466dee942cd94370ec0252f0c71f8ff83eac = $this->env->getExtension("native_profiler");
+        $__internal_5e652e6d0890941f34284954b098466dee942cd94370ec0252f0c71f8ff83eac->enter($__internal_5e652e6d0890941f34284954b098466dee942cd94370ec0252f0c71f8ff83eac_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TareaBundle:Default:index.html.twig"));
 
         // line 1
-        echo "Hello daryelis!
+        echo "eventos
+
+<ul id=\"registros\">
+    ";
+        // line 4
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["registros"]) ? $context["registros"] : $this->getContext($context, "registros")));
+        foreach ($context['_seq'] as $context["_key"] => $context["registro"]) {
+            // line 5
+            echo "        <li>";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["registro"], "title", array()), "html", null, true);
+            echo "</li>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['registro'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 7
+        echo "</ul>
 ";
         
-        $__internal_f4a72b7b1c55c1deeef7b9cec31ff383ced0d063eb5aeeeab1f099f1dbb9f03a->leave($__internal_f4a72b7b1c55c1deeef7b9cec31ff383ced0d063eb5aeeeab1f099f1dbb9f03a_prof);
+        $__internal_5e652e6d0890941f34284954b098466dee942cd94370ec0252f0c71f8ff83eac->leave($__internal_5e652e6d0890941f34284954b098466dee942cd94370ec0252f0c71f8ff83eac_prof);
 
     }
 
@@ -31,10 +49,21 @@ class __TwigTemplate_da93ca26a698afe539b81607c346a65315b4cfc36cad74c454cb7048d31
         return "TareaBundle:Default:index.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  22 => 1,);
+        return array (  40 => 7,  31 => 5,  27 => 4,  22 => 1,);
     }
 }
-/* Hello daryelis!*/
+/* eventos*/
+/* */
+/* <ul id="registros">*/
+/*     {% for registro in registros %}*/
+/*         <li>{{ registro.title }}</li>*/
+/*     {% endfor %}*/
+/* </ul>*/
 /* */

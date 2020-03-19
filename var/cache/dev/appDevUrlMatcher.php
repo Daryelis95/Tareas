@@ -110,9 +110,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'TareaBundle\\Controller\\DefaultController::indexAction',  '_route' => 'tarea_homepage',);
             }
 
-            // tarea_article
-            if ($pathinfo === '/tarea/article') {
-                return array (  '_controller' => 'TareaBundle\\Controller\\DefaultController::createAction',  '_route' => 'tarea_article',);
+            // tarea_create
+            if ($pathinfo === '/tarea/create') {
+                return array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::createAction',  '_route' => 'tarea_create',);
+            }
+
+            // tarea_mostar
+            if ($pathinfo === '/tarea/mostrar') {
+                return array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::mostrarAction',  '_route' => 'tarea_mostar',);
             }
 
         }
