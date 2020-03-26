@@ -7,40 +7,211 @@ class __TwigTemplate_da93ca26a698afe539b81607c346a65315b4cfc36cad74c454cb7048d31
     {
         parent::__construct($env);
 
-        $this->parent = false;
-
+        // line 1
+        $this->parent = $this->loadTemplate("base.html.twig", "TareaBundle:Default:index.html.twig", 1);
         $this->blocks = array(
+            'title' => array($this, 'block_title'),
+            'body' => array($this, 'block_body'),
+            'javascripts' => array($this, 'block_javascripts'),
         );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5e652e6d0890941f34284954b098466dee942cd94370ec0252f0c71f8ff83eac = $this->env->getExtension("native_profiler");
-        $__internal_5e652e6d0890941f34284954b098466dee942cd94370ec0252f0c71f8ff83eac->enter($__internal_5e652e6d0890941f34284954b098466dee942cd94370ec0252f0c71f8ff83eac_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TareaBundle:Default:index.html.twig"));
+        $__internal_18149048ab39a2c51cf1070e3d128ffc44fb26a724104c1b91b1d7bf8104ec1a = $this->env->getExtension("native_profiler");
+        $__internal_18149048ab39a2c51cf1070e3d128ffc44fb26a724104c1b91b1d7bf8104ec1a->enter($__internal_18149048ab39a2c51cf1070e3d128ffc44fb26a724104c1b91b1d7bf8104ec1a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TareaBundle:Default:index.html.twig"));
 
-        // line 1
-        echo "eventos
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_18149048ab39a2c51cf1070e3d128ffc44fb26a724104c1b91b1d7bf8104ec1a->leave($__internal_18149048ab39a2c51cf1070e3d128ffc44fb26a724104c1b91b1d7bf8104ec1a_prof);
 
-<ul id=\"registros\">
+    }
+
+    // line 2
+    public function block_title($context, array $blocks = array())
+    {
+        $__internal_59081b14acf1153eed8b59b60a809602216e4678d2c0ed0feb03306a256f17f0 = $this->env->getExtension("native_profiler");
+        $__internal_59081b14acf1153eed8b59b60a809602216e4678d2c0ed0feb03306a256f17f0->enter($__internal_59081b14acf1153eed8b59b60a809602216e4678d2c0ed0feb03306a256f17f0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+
+        // line 3
+        echo "   TAREAS
+ ";
+        
+        $__internal_59081b14acf1153eed8b59b60a809602216e4678d2c0ed0feb03306a256f17f0->leave($__internal_59081b14acf1153eed8b59b60a809602216e4678d2c0ed0feb03306a256f17f0_prof);
+
+    }
+
+    // line 6
+    public function block_body($context, array $blocks = array())
+    {
+        $__internal_e0207753f935227372fb02359dd70c4092a18d15f075540df8483415e526bce8 = $this->env->getExtension("native_profiler");
+        $__internal_e0207753f935227372fb02359dd70c4092a18d15f075540df8483415e526bce8->enter($__internal_e0207753f935227372fb02359dd70c4092a18d15f075540df8483415e526bce8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+
+        // line 7
+        echo " <div class=\"cont-head\">
+  <div class=\"row\">
+    <div class=\"col-lg-2 col-md-2\">
+     <button type=\"button\" class=\"btn  btn-success btn-table\" data-toggle=\"modal\" data-target=\"#exampleModal\">
+     <span class=\"fa fa-plus\"></span>
+     Nueva Tarea
+     </button>
+   
+   </div>
+    <div class=\"col-lg-4 col-md-4 navbar navbar-light bg-light\">
+      <form class=\"form-inline\">
+        <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
+        <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>
+      </form>
+    </div>
+    <div class=\"col-lg-6 col-md-6 hidden\"></div>
+  </div>
+ </div>
+ <table class=\"table table-bordered\">
+  <thead class=\"thead-dark\">
+    <tr>
+      <th scope=\"col\">Titulo</th>
+      <th scope=\"col\">Descripcion</th>
+      <th scope=\"col\">Fecha</th>
+      <th scope=\"col\">Prioridad</th>
+      <th scope=\"col\">Status</th>
+      <th scope=\"col\">Editar</th>
+    </tr>
+  </thead>
+  <tbody>
     ";
-        // line 4
+        // line 37
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["registros"]) ? $context["registros"] : $this->getContext($context, "registros")));
         foreach ($context['_seq'] as $context["_key"] => $context["registro"]) {
-            // line 5
-            echo "        <li>";
+            // line 38
+            echo "      <tr id=\"registro\" data-id=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["registro"], "id", array()), "html", null, true);
+            echo "\">
+            
+        <td>";
+            // line 40
             echo twig_escape_filter($this->env, $this->getAttribute($context["registro"], "title", array()), "html", null, true);
-            echo "</li>
+            echo "</td>
+        <td>";
+            // line 41
+            echo twig_escape_filter($this->env, $this->getAttribute($context["registro"], "descripcion", array()), "html", null, true);
+            echo "</td>
+        <td>";
+            // line 42
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["registro"], "fecha", array()), "m/d/y"), "html", null, true);
+            echo "</td>
+        <td>";
+            // line 43
+            echo twig_escape_filter($this->env, $this->getAttribute($context["registro"], "prioridad", array()), "html", null, true);
+            echo "</td>
+        <td>";
+            // line 44
+            echo twig_escape_filter($this->env, $this->getAttribute($context["registro"], "status", array()), "html", null, true);
+            echo "</td>
+        <td><button type=\"button\" class=\"btn  btn-success\">Primary</button></td>
+           
+      </tr>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['registro'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 7
-        echo "</ul>
+        // line 49
+        echo "      
+  </tbody>
+</table>
+";
+        // line 53
+        echo "<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">
+  <div class=\"modal-dialog\" role=\"document\">
+    <div class=\"modal-content\">
+      <div class=\"modal-header\">
+          <h5 class=\"modal-title\" id=\"exampleModalLabel\">Nueva Tarea</h5>
+        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+          <span aria-hidden=\"true\">&times;</span>
+        </button>
+      </div>
+      <div class=\"modal-body\">
+        <form name=\"registro\" method=\"post\">
+         <div id=\"registro\">
+          <div class=\"form-row\">
+            <div class=\"form-group col-md-6\">
+              <label for=\"registro_title\">Titulo</label>
+              <input type=\"text\" id=\"registro_title\" name=\"registro[title]\" class=\"form-control\" placeholder=\"Titulo\">
+           </div>
+           <div class=\"form-group col-md-6\">
+             <label for=\"registro_fecha\">Fecha</label>
+             <input type=\"date\" id=\"registro_fecha\" name=\"registro[fecha]\" class=\"form-control\" >
+           </div>
+          </div>
+
+          <div class=\"form-row\">
+            <div class=\"form-group col-md-6\">
+              <label for=\"registro_status\">Status</label>
+              <select id=\"registro_status\" name=\"registro[status]\" class=\"form-control\">
+                <option>Abierta</option>
+                <option>En Proceso</option>
+                <option>Lista</option>
+              </select>
+            </div>
+            <div class=\"form-group col-md-6\">
+              <label for=\"registro_prioridad\">Prioridad</label>
+                <select id=\"registro_prioridad\" name=\"registro[prioridad]\" class=\"form-control\">
+                   <option>Baja</option>
+                   <option>Media</option>
+                   <option>Alta</option>
+                 </select>
+            </div>
+           </div>
+
+           <div class=\"form-row\">
+              <div class=\"form-group col-md-6\">
+               <label for=\"registro_descripcion\">Descripcion</label>
+              </div>
+              <div class=\"form-group col-md-6\">
+                <textarea id=\"registro_descripcion\" name=\"registro[descripcion]\"rows=\"2\" cols=\"20\" placeholder=\"Descripcion de tarea\"></textarea>
+              </div>
+           </div>
+
+         <div> 
+        </form>
+      </div>
+      <div class=\"modal-footer\">
+        <button type=\"submit\" class=\"btn btn-primary\" id=\"registro_Guardar\" name=\"registro[Guardar]\">Guardar</button>
+        <input type=\"hidden\" id=\"registro__token\" name=\"registro[_token]\" value=\"OX6Y1XdTiXJkg7cW8HoDGFZBerW7RjjZ7jeXBkSRpcc\">
+      </div>
+    </div>
+  </div>
+</div>
 ";
         
-        $__internal_5e652e6d0890941f34284954b098466dee942cd94370ec0252f0c71f8ff83eac->leave($__internal_5e652e6d0890941f34284954b098466dee942cd94370ec0252f0c71f8ff83eac_prof);
+        $__internal_e0207753f935227372fb02359dd70c4092a18d15f075540df8483415e526bce8->leave($__internal_e0207753f935227372fb02359dd70c4092a18d15f075540df8483415e526bce8_prof);
+
+    }
+
+    // line 117
+    public function block_javascripts($context, array $blocks = array())
+    {
+        $__internal_bc779e52ccd84fb3abe7506eb8f026316831f298bc5b837d2eff1b5ef3e58314 = $this->env->getExtension("native_profiler");
+        $__internal_bc779e52ccd84fb3abe7506eb8f026316831f298bc5b837d2eff1b5ef3e58314->enter($__internal_bc779e52ccd84fb3abe7506eb8f026316831f298bc5b837d2eff1b5ef3e58314_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 118
+        echo "  ";
+        $this->displayParentBlock("javascripts", $context, $blocks);
+        echo "
+
+  <script src=\"";
+        // line 120
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/framework/js/popup.js"), "html", null, true);
+        echo "\"></script>
+";
+        
+        $__internal_bc779e52ccd84fb3abe7506eb8f026316831f298bc5b837d2eff1b5ef3e58314->leave($__internal_bc779e52ccd84fb3abe7506eb8f026316831f298bc5b837d2eff1b5ef3e58314_prof);
 
     }
 
@@ -56,14 +227,128 @@ class __TwigTemplate_da93ca26a698afe539b81607c346a65315b4cfc36cad74c454cb7048d31
 
     public function getDebugInfo()
     {
-        return array (  40 => 7,  31 => 5,  27 => 4,  22 => 1,);
+        return array (  210 => 120,  204 => 118,  198 => 117,  130 => 53,  125 => 49,  114 => 44,  110 => 43,  106 => 42,  102 => 41,  98 => 40,  92 => 38,  88 => 37,  56 => 7,  50 => 6,  42 => 3,  36 => 2,  11 => 1,);
     }
 }
-/* eventos*/
+/* {% extends 'base.html.twig' %}*/
+/*  {% block title %}*/
+/*    TAREAS*/
+/*  {% endblock%}*/
 /* */
-/* <ul id="registros">*/
+/*  {% block body %}*/
+/*  <div class="cont-head">*/
+/*   <div class="row">*/
+/*     <div class="col-lg-2 col-md-2">*/
+/*      <button type="button" class="btn  btn-success btn-table" data-toggle="modal" data-target="#exampleModal">*/
+/*      <span class="fa fa-plus"></span>*/
+/*      Nueva Tarea*/
+/*      </button>*/
+/*    */
+/*    </div>*/
+/*     <div class="col-lg-4 col-md-4 navbar navbar-light bg-light">*/
+/*       <form class="form-inline">*/
+/*         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">*/
+/*         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>*/
+/*       </form>*/
+/*     </div>*/
+/*     <div class="col-lg-6 col-md-6 hidden"></div>*/
+/*   </div>*/
+/*  </div>*/
+/*  <table class="table table-bordered">*/
+/*   <thead class="thead-dark">*/
+/*     <tr>*/
+/*       <th scope="col">Titulo</th>*/
+/*       <th scope="col">Descripcion</th>*/
+/*       <th scope="col">Fecha</th>*/
+/*       <th scope="col">Prioridad</th>*/
+/*       <th scope="col">Status</th>*/
+/*       <th scope="col">Editar</th>*/
+/*     </tr>*/
+/*   </thead>*/
+/*   <tbody>*/
 /*     {% for registro in registros %}*/
-/*         <li>{{ registro.title }}</li>*/
+/*       <tr id="registro" data-id="{{registro.id}}">*/
+/*             */
+/*         <td>{{ registro.title }}</td>*/
+/*         <td>{{ registro.descripcion }}</td>*/
+/*         <td>{{ registro.fecha|date("m/d/y")}}</td>*/
+/*         <td>{{ registro.prioridad }}</td>*/
+/*         <td>{{ registro.status }}</td>*/
+/*         <td><button type="button" class="btn  btn-success">Primary</button></td>*/
+/*            */
+/*       </tr>*/
 /*     {% endfor %}*/
-/* </ul>*/
+/*       */
+/*   </tbody>*/
+/* </table>*/
+/* {#++++++++++++++++++++++++++++Modal Form++++++++++++++++++++++++++++++++++++++#}*/
+/* <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">*/
+/*   <div class="modal-dialog" role="document">*/
+/*     <div class="modal-content">*/
+/*       <div class="modal-header">*/
+/*           <h5 class="modal-title" id="exampleModalLabel">Nueva Tarea</h5>*/
+/*         <button type="button" class="close" data-dismiss="modal" aria-label="Close">*/
+/*           <span aria-hidden="true">&times;</span>*/
+/*         </button>*/
+/*       </div>*/
+/*       <div class="modal-body">*/
+/*         <form name="registro" method="post">*/
+/*          <div id="registro">*/
+/*           <div class="form-row">*/
+/*             <div class="form-group col-md-6">*/
+/*               <label for="registro_title">Titulo</label>*/
+/*               <input type="text" id="registro_title" name="registro[title]" class="form-control" placeholder="Titulo">*/
+/*            </div>*/
+/*            <div class="form-group col-md-6">*/
+/*              <label for="registro_fecha">Fecha</label>*/
+/*              <input type="date" id="registro_fecha" name="registro[fecha]" class="form-control" >*/
+/*            </div>*/
+/*           </div>*/
+/* */
+/*           <div class="form-row">*/
+/*             <div class="form-group col-md-6">*/
+/*               <label for="registro_status">Status</label>*/
+/*               <select id="registro_status" name="registro[status]" class="form-control">*/
+/*                 <option>Abierta</option>*/
+/*                 <option>En Proceso</option>*/
+/*                 <option>Lista</option>*/
+/*               </select>*/
+/*             </div>*/
+/*             <div class="form-group col-md-6">*/
+/*               <label for="registro_prioridad">Prioridad</label>*/
+/*                 <select id="registro_prioridad" name="registro[prioridad]" class="form-control">*/
+/*                    <option>Baja</option>*/
+/*                    <option>Media</option>*/
+/*                    <option>Alta</option>*/
+/*                  </select>*/
+/*             </div>*/
+/*            </div>*/
+/* */
+/*            <div class="form-row">*/
+/*               <div class="form-group col-md-6">*/
+/*                <label for="registro_descripcion">Descripcion</label>*/
+/*               </div>*/
+/*               <div class="form-group col-md-6">*/
+/*                 <textarea id="registro_descripcion" name="registro[descripcion]"rows="2" cols="20" placeholder="Descripcion de tarea"></textarea>*/
+/*               </div>*/
+/*            </div>*/
+/* */
+/*          <div> */
+/*         </form>*/
+/*       </div>*/
+/*       <div class="modal-footer">*/
+/*         <button type="submit" class="btn btn-primary" id="registro_Guardar" name="registro[Guardar]">Guardar</button>*/
+/*         <input type="hidden" id="registro__token" name="registro[_token]" value="OX6Y1XdTiXJkg7cW8HoDGFZBerW7RjjZ7jeXBkSRpcc">*/
+/*       </div>*/
+/*     </div>*/
+/*   </div>*/
+/* </div>*/
+/* {#++++++++++++++++++++++++++++ END Modal Form++++++++++++++++++++++++++++++++++++++#}*/
+/* {% endblock%}*/
+/* */
+/* {% block javascripts %}*/
+/*   {{ parent() }}*/
+/* */
+/*   <script src="{{ asset('bundles/framework/js/popup.js') }}"></script>*/
+/* {% endblock %}*/
 /* */

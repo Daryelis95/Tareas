@@ -17,12 +17,9 @@ use TareaBundle\Entity\Registro;
 
 class RegistroController extends Controller {
 
-  public function indexAction()
-  {
-    return $this->render('TareaBundle:Default:index.html.twig');
-  }
-/**
-     * @Route("/registro/create", name="registro_create")
+
+    /**
+     * @Route("/create", name="tarea_create")
      */
 
     //recuperar datos del formulario y crea el registro en bd
@@ -52,6 +49,9 @@ class RegistroController extends Controller {
             'form' => $form->createView(),
         ));
     }
+    /**
+     * @Route("/mostrar", name="tarea_mostrar")
+     */
    //mostrar registros
    public function mostrarAction()
    {
@@ -60,6 +60,71 @@ class RegistroController extends Controller {
        $registro = $repository->findAll();
 
       return $this->render('TareaBundle:Default:index.html.twig', array("registros"=>$registro));
+   }
+  /**
+     * @Route("/editar", name="tarea_editar")
+     */
+   //editar
+   public function editAction(Request $request, Registro $registro)
+   {
+    $deleteForm = $this->createDeleteForm($registro);
+    $editForm = $this->createForm('TareaBundle\Form\RegistroType', $registro);
+    $editForm->handleRequest($request);
+
+    if ($editForm->isSubmitted() && $editForm->isValid()) {
+        $this->getDoctrine()->getManager()->flush();
+
+        return $this->redirectToRoute('registro_edit', array('id' => $registro->getId()));
+    }
+
+    return $this->render('TareaBundle:Default:edit.html.twig', array(
+        'registro' => $registro,
+        'edit_form' => $editForm->createView(),
+        'delete_form' => $deleteForm->createView(),
+    ));
+   }
+
+   /**
+     * @Route("/update/{id}/{status}")
+   */
+    public function updateAction($id , $status)
+   {
+    $entityManager = $this->getDoctrine()->getManager();
+    $registro = $entityManager->getRepository(Registro::class)->find($id);
+
+    if (!$registro) {
+        throw $this->createNotFoundException(
+            'No existe el registro '.$id
+        );
+    }
+
+    $registro->setstatus($status);
+
+    $entityManager->flush();
+
+    return $this->redirectToRoute('tarea_mostrar', [
+        'id' => $registro->getId()
+    ]);
+   }
+
+   public function deleteAction($id)
+   { 
+
+    $ent = $this->getDoctrine()->getManager();
+    $registro = $ent->getRepository(Registro::class)->find($id);
+
+    if (!$registro) {
+        throw $this->createNotFoundException(
+            'No existe el registro  con id:'.$id
+        );
+    }
+      $ent->remove($registro);
+      $ent->flush();
+
+      return $this->redirectToRoute('tarea_mostrar', [
+        'id' => $registro->getId()
+       ]);
+    
    }
 
 } 

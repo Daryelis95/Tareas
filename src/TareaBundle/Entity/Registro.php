@@ -33,7 +33,7 @@ class Registro {
   /**
   * @ORM\Column(type="string", length=200, nullable=true)
   */
-  protected $proceso;
+  protected $prioridad;
 
   /**
   * @ORM\Column(type="string", length=200, nullable=true)
@@ -124,27 +124,27 @@ class Registro {
     }
 
     /**
-     * Set proceso
+     * Set prioridad
      *
-     * @param string $proceso
+     * @param string $prioridad
      *
      * @return Registro
      */
-    public function setProceso($proceso)
+    public function setPrioridad($prioridad)
     {
-        $this->proceso = $proceso;
+        $this->prioridad = $prioridad;
 
         return $this;
     }
 
     /**
-     * Get proceso
+     * Get prioridad
      *
      * @return string
      */
-    public function getProceso()
+    public function getPrioridad()
     {
-        return $this->proceso;
+        return $this->prioridad;
     }
 
     /**

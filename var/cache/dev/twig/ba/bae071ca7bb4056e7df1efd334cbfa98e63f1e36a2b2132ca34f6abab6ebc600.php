@@ -1,6 +1,6 @@
 <?php
 
-/* WebProfilerBundle:Profiler:bag.html.twig */
+/* @WebProfiler/Profiler/bag.html.twig */
 class __TwigTemplate_b68eb3c18bad10c11316b680351e6e30fdae9c4b58c71e8f29f1b928c3833012 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_b68eb3c18bad10c11316b680351e6e30fdae9c4b58c71e8f29f1b928c38
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_af47f5f2891c37d1a665846c907ff51f9d6ad64e3ba08fdab2c0c25b366ff141 = $this->env->getExtension("native_profiler");
-        $__internal_af47f5f2891c37d1a665846c907ff51f9d6ad64e3ba08fdab2c0c25b366ff141->enter($__internal_af47f5f2891c37d1a665846c907ff51f9d6ad64e3ba08fdab2c0c25b366ff141_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Profiler:bag.html.twig"));
+        $__internal_c7b7fe9ff5774be651991a09d70af43218eb4f1aafeb9642ffda0f712e5a86cb = $this->env->getExtension("native_profiler");
+        $__internal_c7b7fe9ff5774be651991a09d70af43218eb4f1aafeb9642ffda0f712e5a86cb->enter($__internal_c7b7fe9ff5774be651991a09d70af43218eb4f1aafeb9642ffda0f712e5a86cb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/bag.html.twig"));
 
         // line 1
         echo "<table class=\"";
@@ -70,13 +70,13 @@ class __TwigTemplate_b68eb3c18bad10c11316b680351e6e30fdae9c4b58c71e8f29f1b928c38
 </table>
 ";
         
-        $__internal_af47f5f2891c37d1a665846c907ff51f9d6ad64e3ba08fdab2c0c25b366ff141->leave($__internal_af47f5f2891c37d1a665846c907ff51f9d6ad64e3ba08fdab2c0c25b366ff141_prof);
+        $__internal_c7b7fe9ff5774be651991a09d70af43218eb4f1aafeb9642ffda0f712e5a86cb->leave($__internal_c7b7fe9ff5774be651991a09d70af43218eb4f1aafeb9642ffda0f712e5a86cb_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "WebProfilerBundle:Profiler:bag.html.twig";
+        return "@WebProfiler/Profiler/bag.html.twig";
     }
 
     public function isTraitable()

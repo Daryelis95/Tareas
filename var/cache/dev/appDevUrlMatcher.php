@@ -115,9 +115,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::createAction',  '_route' => 'tarea_create',);
             }
 
-            // tarea_mostar
+            // tarea_mostrar
             if ($pathinfo === '/tarea/mostrar') {
-                return array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::mostrarAction',  '_route' => 'tarea_mostar',);
+                return array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::mostrarAction',  '_route' => 'tarea_mostrar',);
+            }
+
+            // tarea_update
+            if (0 === strpos($pathinfo, '/tarea/update') && preg_match('#^/tarea/update/(?P<id>[^/]++)/(?P<status>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tarea_update')), array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::updateAction',));
+            }
+
+            // tarea_delete
+            if (0 === strpos($pathinfo, '/tarea/delete') && preg_match('#^/tarea/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tarea_delete')), array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::deleteAction',));
             }
 
         }

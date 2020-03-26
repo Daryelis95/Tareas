@@ -21,7 +21,7 @@ class RegistroType extends AbstractType
             ->add('title')
             ->add('descripcion')
             ->add('fecha',DateType::class)
-            ->add('proceso')
+            ->add('prioridad')
             ->add('status')
             ->add('Guardar',SubmitType::class)
 

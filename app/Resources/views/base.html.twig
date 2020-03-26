@@ -3,11 +3,46 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+            {# css bootstrap#}
+          <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        {% block stylesheets %}
+           <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+           <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+           <link rel="stylesheet" href="{{ asset('fonts/fontawesome-webfont_9D521E95.svg') }}">
+           <link rel="stylesheet" href="{{ asset('fonts/line-awesome.svg') }}">
+           <link rel="stylesheet" href="{{ asset('css/all.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+           <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {# js bootstrap#}
+        <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+        <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+        
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <!-- Navigation-->
+<div class="img">
+<header>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i class="fas fa-home"></i></font></font></h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+       <a class="p-2 text-dark" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i class="fas fa-scroll"></i>Tableros</font></font></a>
+       <font style="vertical-align: inherit;"><a class="p-2 text-dark" href="#"><font style="vertical-align: inherit;">Contacto</font></a><a class="p-2 text-dark" href="#"><font style="vertical-align: inherit;">soporte </font></a></font><a class="p-2 text-dark" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">empresarial</font></font></a>
+       <a class="p-2 text-dark" href="#"><font style="vertical-align: inherit;"></font></a>
+       <a class="p-2 text-dark" href="#"><font style="vertical-align: inherit;"></font></a>
+    </nav>
+    <a class="btn btn-outline-success" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Regístrate</font></font></a>
+  </div>
+</header>
+      
+       
+        {% block body %}
+        
+        {% endblock %}
+
+         {% block javascripts %}
+          
+        {% endblock %}
     </body>
 </html>

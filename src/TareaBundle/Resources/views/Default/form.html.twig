@@ -1,5 +1,24 @@
+{% extends 'base.html.twig' %}
+
+ 
+{% block body %}
+
+{#++++++++++++++++++++++++++++++FORM++++++++++++++++++++++++++++++#}
+
+  
 <h2>Tareas</h2>
  
 {{form_start(form, {'action':'', 'method':'POST'})}}
 {{ form_widget(form) }}
 {{form_end(form)}}
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }} 
+
+  <script src="{{ asset('bundles/framework/js/delete-registro.js') }}"></script>
+  <script src="{{ asset('bundles/framework/js/popup.js') }}"></script>
+{% endblock %}

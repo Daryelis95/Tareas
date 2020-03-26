@@ -15,8 +15,8 @@ class __TwigTemplate_896e4aadb6a4655eb952eaf3df2b6fbb1873690f678b6e22b120494fdc3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_565667a3151a31b1d1daf81b5540245fef97288b2e41f4577349f02decd978a4 = $this->env->getExtension("native_profiler");
-        $__internal_565667a3151a31b1d1daf81b5540245fef97288b2e41f4577349f02decd978a4->enter($__internal_565667a3151a31b1d1daf81b5540245fef97288b2e41f4577349f02decd978a4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "layout.bootstrap.html.twig"));
+        $__internal_a0332d2dccfcdf1d582bb1b97520a2ea8c35dce7df81d3db1ee67f0170c95e56 = $this->env->getExtension("native_profiler");
+        $__internal_a0332d2dccfcdf1d582bb1b97520a2ea8c35dce7df81d3db1ee67f0170c95e56->enter($__internal_a0332d2dccfcdf1d582bb1b97520a2ea8c35dce7df81d3db1ee67f0170c95e56_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "layout.bootstrap.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -28,17 +28,22 @@ class __TwigTemplate_896e4aadb6a4655eb952eaf3df2b6fbb1873690f678b6e22b120494fdc3
         <meta name=\"author\" content=\"\" />
         <title>Creative - Start Bootstrap Theme</title>
         <!-- Font Awesome icons (free version)-->
-        <script src=\"https://use.fontawesome.com/releases/v5.12.1/js/all.js\" crossorigin=\"anonymous\"></script>
+        <script src=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(""), "html", null, true);
+        echo "https://use.fontawesome.com/releases/v5.12.1/js/all.js\" crossorigin=\"anonymous\"></script>
         <!-- Google fonts-->
         <link href=\"https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700\" rel=\"stylesheet\" />
         <link href=\"https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic\" rel=\"stylesheet\" type=\"text/css\" />
         <!-- Third party plugin CSS-->
-        <link href=\"https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css\" rel=\"stylesheet\" />
+         <link href=\"https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css\" rel=\"stylesheet\" />
+         
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href=\"";
-        // line 17
+        // line 18
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("template/freenlance/css/styles.css\" rel=\"stylesheet"), "html", null, true);
         echo "/>
+        
     </head>
     <body id=\"page-top\">
         <!-- Navigation-->
@@ -226,7 +231,7 @@ class __TwigTemplate_896e4aadb6a4655eb952eaf3df2b6fbb1873690f678b6e22b120494fdc3
 </html>
 ";
         
-        $__internal_565667a3151a31b1d1daf81b5540245fef97288b2e41f4577349f02decd978a4->leave($__internal_565667a3151a31b1d1daf81b5540245fef97288b2e41f4577349f02decd978a4_prof);
+        $__internal_a0332d2dccfcdf1d582bb1b97520a2ea8c35dce7df81d3db1ee67f0170c95e56->leave($__internal_a0332d2dccfcdf1d582bb1b97520a2ea8c35dce7df81d3db1ee67f0170c95e56_prof);
 
     }
 
@@ -242,7 +247,7 @@ class __TwigTemplate_896e4aadb6a4655eb952eaf3df2b6fbb1873690f678b6e22b120494fdc3
 
     public function getDebugInfo()
     {
-        return array (  40 => 17,  22 => 1,);
+        return array (  44 => 18,  33 => 10,  22 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -254,14 +259,16 @@ class __TwigTemplate_896e4aadb6a4655eb952eaf3df2b6fbb1873690f678b6e22b120494fdc3
 /*         <meta name="author" content="" />*/
 /*         <title>Creative - Start Bootstrap Theme</title>*/
 /*         <!-- Font Awesome icons (free version)-->*/
-/*         <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>*/
+/*         <script src="{{asset('')}}https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>*/
 /*         <!-- Google fonts-->*/
 /*         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />*/
 /*         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />*/
 /*         <!-- Third party plugin CSS-->*/
-/*         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />*/
+/*          <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />*/
+/*          */
 /*         <!-- Core theme CSS (includes Bootstrap)-->*/
 /*         <link href="{{ asset('template/freenlance/css/styles.css" rel="stylesheet') }}/>*/
+/*         */
 /*     </head>*/
 /*     <body id="page-top">*/
 /*         <!-- Navigation-->*/

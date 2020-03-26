@@ -1,0 +1,33 @@
+body {
+  
+}
+
+.btn-guardar {
+  margin-left: 300px;
+}
+
+.table {
+  width: 90%;
+  margin-top: 90px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 100px;
+}
+.thead-fond {
+  background-color: #f4623a !important;
+}
+.btn-table {
+  color: #fff;
+  position: absolute;
+  margin-top:10px;
+  
+}
+
+.cont-head{
+    
+    margin-left: 100px;
+    width: 90%;
+    margin-top:30px;
+    
+}
+

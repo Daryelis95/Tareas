@@ -8,7 +8,15 @@ tarea_create:
     defaults: { _controller: TareaBundle:Registro:create }
 
 
-tarea_mostar:
+tarea_mostrar:
     path:     /mostrar
     defaults: { _controller: TareaBundle:Registro:mostrar }
+
+tarea_update:
+    path:     /update/{id}/{status}
+    defaults: { _controller: TareaBundle:Registro:update }
+
+tarea_delete:
+    path:     /delete/{id}
+    defaults: { _controller: TareaBundle:Registro:delete }
 
