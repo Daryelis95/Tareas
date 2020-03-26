@@ -130,6 +130,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'tarea_delete')), array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::deleteAction',));
             }
 
+            // tarea_form
+            if ($pathinfo === '/tarea/form') {
+                return array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::formAction',  '_route' => 'tarea_form',);
+            }
+
         }
 
         // app_article_create

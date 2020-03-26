@@ -16,8 +16,11 @@ use TareaBundle\Form\RegistroType;
 use TareaBundle\Entity\Registro;
 
 class RegistroController extends Controller {
-
-
+    public function indexAction()
+    {
+      return $this->render('TareaBundle:Default:index.html.twig');
+    }
+  
     /**
      * @Route("/create", name="tarea_create")
      */
@@ -43,49 +46,21 @@ class RegistroController extends Controller {
             // en realidad ejecuta las consultas (es decir, la consulta INSERT)
             $em->flush();
 
-            return $this->redirectToRoute('TareaBundle:Default:index.html.twig');
+            return $this->redirectToRoute('tarea_create');
           }   
-          return $this->render('TareaBundle:Default:form.html.twig', array(
-            'form' => $form->createView(),
-        ));
+          //mostrar DATOS de la db
+          $repository = $this->getDoctrine()->getRepository('TareaBundle:Registro');
+          // find *all* registro
+          $registro = $repository->findAll();
+
+          return $this->render('TareaBundle:Default:index.html.twig', 
+          array('form' => $form->createView(),
+          "registros"=>$registro
+          ));
     }
-    /**
-     * @Route("/mostrar", name="tarea_mostrar")
-     */
-   //mostrar registros
-   public function mostrarAction()
-   {
-       $repository = $this->getDoctrine()->getRepository('TareaBundle:Registro');
-       // find *all* registro
-       $registro = $repository->findAll();
-
-      return $this->render('TareaBundle:Default:index.html.twig', array("registros"=>$registro));
-   }
-  /**
-     * @Route("/editar", name="tarea_editar")
-     */
-   //editar
-   public function editAction(Request $request, Registro $registro)
-   {
-    $deleteForm = $this->createDeleteForm($registro);
-    $editForm = $this->createForm('TareaBundle\Form\RegistroType', $registro);
-    $editForm->handleRequest($request);
-
-    if ($editForm->isSubmitted() && $editForm->isValid()) {
-        $this->getDoctrine()->getManager()->flush();
-
-        return $this->redirectToRoute('registro_edit', array('id' => $registro->getId()));
-    }
-
-    return $this->render('TareaBundle:Default:edit.html.twig', array(
-        'registro' => $registro,
-        'edit_form' => $editForm->createView(),
-        'delete_form' => $deleteForm->createView(),
-    ));
-   }
-
+   
    /**
-     * @Route("/update/{id}/{status}")
+     * @Route("/update/{id}/{status}" , name="tarea_update")
    */
     public function updateAction($id , $status)
    {
@@ -106,7 +81,9 @@ class RegistroController extends Controller {
         'id' => $registro->getId()
     ]);
    }
-
+  /**
+     * @Route("/delete/{id}" , name="tarea_delete")
+   */
    public function deleteAction($id)
    { 
 
@@ -126,5 +103,5 @@ class RegistroController extends Controller {
        ]);
     
    }
-
+    
 } 

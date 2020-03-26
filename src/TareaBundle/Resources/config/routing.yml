@@ -20,3 +20,7 @@ tarea_delete:
     path:     /delete/{id}
     defaults: { _controller: TareaBundle:Registro:delete }
 
+tarea_form:
+    path:     /form
+    defaults: { _controller: TareaBundle:Registro:form }
+

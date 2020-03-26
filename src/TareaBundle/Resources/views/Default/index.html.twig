@@ -1,4 +1,6 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'form/registroForm.html.twig' %}
+
  {% block title %}
    TAREAS
  {% endblock%}
@@ -60,58 +62,18 @@
         </button>
       </div>
       <div class="modal-body">
-        <form name="registro" method="post">
-         <div id="registro">
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="registro_title">Titulo</label>
-              <input type="text" id="registro_title" name="registro[title]" class="form-control" placeholder="Titulo">
-           </div>
-           <div class="form-group col-md-6">
-             <label for="registro_fecha">Fecha</label>
-             <input type="date" id="registro_fecha" name="registro[fecha]" class="form-control" >
-           </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="registro_status">Status</label>
-              <select id="registro_status" name="registro[status]" class="form-control">
-                <option>Abierta</option>
-                <option>En Proceso</option>
-                <option>Lista</option>
-              </select>
-            </div>
-            <div class="form-group col-md-6">
-              <label for="registro_prioridad">Prioridad</label>
-                <select id="registro_prioridad" name="registro[prioridad]" class="form-control">
-                   <option>Baja</option>
-                   <option>Media</option>
-                   <option>Alta</option>
-                 </select>
-            </div>
-           </div>
-
-           <div class="form-row">
-              <div class="form-group col-md-6">
-               <label for="registro_descripcion">Descripcion</label>
-              </div>
-              <div class="form-group col-md-6">
-                <textarea id="registro_descripcion" name="registro[descripcion]"rows="2" cols="20" placeholder="Descripcion de tarea"></textarea>
-              </div>
-           </div>
-
-         <div> 
-        </form>
+          {{form_start(form, {'action':'', 'method':'POST'})}}
+          {{ form_widget(form) }}
+        
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" id="registro_Guardar" name="registro[Guardar]">Guardar</button>
-        <input type="hidden" id="registro__token" name="registro[_token]" value="OX6Y1XdTiXJkg7cW8HoDGFZBerW7RjjZ7jeXBkSRpcc">
+        {{form_end(form)}}
       </div>
     </div>
   </div>
 </div>
 {#++++++++++++++++++++++++++++ END Modal Form++++++++++++++++++++++++++++++++++++++#}
+
 {% endblock%}
 
 {% block javascripts %}
