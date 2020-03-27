@@ -100,51 +100,44 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/tarea')) {
-            // tarea_homepage
-            if (rtrim($pathinfo, '/') === '/tarea') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'tarea_homepage');
+        if (0 === strpos($pathinfo, '/t')) {
+            if (0 === strpos($pathinfo, '/tarea')) {
+                // tarea_homepage
+                if (rtrim($pathinfo, '/') === '/tarea') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'tarea_homepage');
+                    }
+
+                    return array (  '_controller' => 'TareaBundle\\Controller\\DefaultController::indexAction',  '_route' => 'tarea_homepage',);
                 }
 
-                return array (  '_controller' => 'TareaBundle\\Controller\\DefaultController::indexAction',  '_route' => 'tarea_homepage',);
+                // tarea_create
+                if (0 === strpos($pathinfo, '/tarea/create') && preg_match('#^/tarea/create/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'tarea_create')), array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::createAction',));
+                }
+
+                // tarea_mostrar
+                if ($pathinfo === '/tarea/mostrar') {
+                    return array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::mostrarAction',  '_route' => 'tarea_mostrar',);
+                }
+
+                // tarea_update
+                if (0 === strpos($pathinfo, '/tarea/update') && preg_match('#^/tarea/update/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'tarea_update')), array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::updateAction',));
+                }
+
+                // tarea_delete
+                if (0 === strpos($pathinfo, '/tarea/delete') && preg_match('#^/tarea/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'tarea_delete')), array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::deleteAction',));
+                }
+
             }
 
-            // tarea_create
-            if ($pathinfo === '/tarea/create') {
-                return array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::createAction',  '_route' => 'tarea_create',);
+            // homepage
+            if ($pathinfo === '/template/bootstrap') {
+                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::templateAction',  '_route' => 'homepage',);
             }
 
-            // tarea_mostrar
-            if ($pathinfo === '/tarea/mostrar') {
-                return array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::mostrarAction',  '_route' => 'tarea_mostrar',);
-            }
-
-            // tarea_update
-            if (0 === strpos($pathinfo, '/tarea/update') && preg_match('#^/tarea/update/(?P<id>[^/]++)/(?P<status>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tarea_update')), array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::updateAction',));
-            }
-
-            // tarea_delete
-            if (0 === strpos($pathinfo, '/tarea/delete') && preg_match('#^/tarea/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tarea_delete')), array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::deleteAction',));
-            }
-
-            // tarea_form
-            if ($pathinfo === '/tarea/form') {
-                return array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::formAction',  '_route' => 'tarea_form',);
-            }
-
-        }
-
-        // app_article_create
-        if ($pathinfo === '/create-article') {
-            return array (  '_controller' => 'AppBundle\\Controller\\ArticleController::createAction',  '_route' => 'app_article_create',);
-        }
-
-        // homepage
-        if ($pathinfo === '/template/bootstrap') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::templateAction',  '_route' => 'homepage',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

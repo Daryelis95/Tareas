@@ -37,14 +37,15 @@
   </thead>
   <tbody>
     {% for registro in registros %}
-      <tr id="registro" data-id="{{registro.id}}">
-            
+      <tr id="registro">
+         
         <td>{{ registro.title }}</td>
         <td>{{ registro.descripcion }}</td>
         <td>{{ registro.fecha|date("m/d/y")}}</td>
         <td>{{ registro.prioridad }}</td>
         <td>{{ registro.status }}</td>
-        <td><button type="button" class="btn  btn-success">Primary</button></td>
+        <td><a href="{{path('tarea_create', {'id':registro.id})}}" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-edit"></i></a>
+        <a href="{{path('tarea_delete', {'id':registro.id})}}"><i class="fas fa-trash-alt"></i></i></a></td>
            
       </tr>
     {% endfor %}

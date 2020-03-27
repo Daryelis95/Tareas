@@ -23,37 +23,37 @@ class __TwigTemplate_da93ca26a698afe539b81607c346a65315b4cfc36cad74c454cb7048d31
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_9a91c68631ec4a25e1ed368a817558defaf24e814fbfc5b46ce3e04d29bd9558 = $this->env->getExtension("native_profiler");
-        $__internal_9a91c68631ec4a25e1ed368a817558defaf24e814fbfc5b46ce3e04d29bd9558->enter($__internal_9a91c68631ec4a25e1ed368a817558defaf24e814fbfc5b46ce3e04d29bd9558_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TareaBundle:Default:index.html.twig"));
+        $__internal_d9846445a6ad8e518b275571bd54fe365d9ec12664146146c93747205ac09a50 = $this->env->getExtension("native_profiler");
+        $__internal_d9846445a6ad8e518b275571bd54fe365d9ec12664146146c93747205ac09a50->enter($__internal_d9846445a6ad8e518b275571bd54fe365d9ec12664146146c93747205ac09a50_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TareaBundle:Default:index.html.twig"));
 
         // line 2
         $this->env->getExtension('form')->renderer->setTheme((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), array(0 => "form/registroForm.html.twig"));
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_9a91c68631ec4a25e1ed368a817558defaf24e814fbfc5b46ce3e04d29bd9558->leave($__internal_9a91c68631ec4a25e1ed368a817558defaf24e814fbfc5b46ce3e04d29bd9558_prof);
+        $__internal_d9846445a6ad8e518b275571bd54fe365d9ec12664146146c93747205ac09a50->leave($__internal_d9846445a6ad8e518b275571bd54fe365d9ec12664146146c93747205ac09a50_prof);
 
     }
 
     // line 4
     public function block_title($context, array $blocks = array())
     {
-        $__internal_8b3e7a8463ba34efad8948f8d0e2b1de63b94a121316d7757e35966051379a5e = $this->env->getExtension("native_profiler");
-        $__internal_8b3e7a8463ba34efad8948f8d0e2b1de63b94a121316d7757e35966051379a5e->enter($__internal_8b3e7a8463ba34efad8948f8d0e2b1de63b94a121316d7757e35966051379a5e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_a5fb996b84346a0e28956454e1f66cde177bd427ccfb41890125f1af46e4470b = $this->env->getExtension("native_profiler");
+        $__internal_a5fb996b84346a0e28956454e1f66cde177bd427ccfb41890125f1af46e4470b->enter($__internal_a5fb996b84346a0e28956454e1f66cde177bd427ccfb41890125f1af46e4470b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 5
         echo "   TAREAS
  ";
         
-        $__internal_8b3e7a8463ba34efad8948f8d0e2b1de63b94a121316d7757e35966051379a5e->leave($__internal_8b3e7a8463ba34efad8948f8d0e2b1de63b94a121316d7757e35966051379a5e_prof);
+        $__internal_a5fb996b84346a0e28956454e1f66cde177bd427ccfb41890125f1af46e4470b->leave($__internal_a5fb996b84346a0e28956454e1f66cde177bd427ccfb41890125f1af46e4470b_prof);
 
     }
 
     // line 8
     public function block_body($context, array $blocks = array())
     {
-        $__internal_5394a752b06925d6f55a1f450ebf744a2b241dd0983ad135c36122765c2ddf95 = $this->env->getExtension("native_profiler");
-        $__internal_5394a752b06925d6f55a1f450ebf744a2b241dd0983ad135c36122765c2ddf95->enter($__internal_5394a752b06925d6f55a1f450ebf744a2b241dd0983ad135c36122765c2ddf95_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_cbeece44660beb931e03064f53650c45dff37fca074944142870f373f99a35cc = $this->env->getExtension("native_profiler");
+        $__internal_cbeece44660beb931e03064f53650c45dff37fca074944142870f373f99a35cc->enter($__internal_cbeece44660beb931e03064f53650c45dff37fca074944142870f373f99a35cc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 9
         echo " <div class=\"cont-head\">
@@ -92,10 +92,8 @@ class __TwigTemplate_da93ca26a698afe539b81607c346a65315b4cfc36cad74c454cb7048d31
         $context['_seq'] = twig_ensure_traversable((isset($context["registros"]) ? $context["registros"] : $this->getContext($context, "registros")));
         foreach ($context['_seq'] as $context["_key"] => $context["registro"]) {
             // line 40
-            echo "      <tr id=\"registro\" data-id=\"";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["registro"], "id", array()), "html", null, true);
-            echo "\">
-            
+            echo "      <tr id=\"registro\">
+         
         <td>";
             // line 42
             echo twig_escape_filter($this->env, $this->getAttribute($context["registro"], "title", array()), "html", null, true);
@@ -116,7 +114,14 @@ class __TwigTemplate_da93ca26a698afe539b81607c346a65315b4cfc36cad74c454cb7048d31
             // line 46
             echo twig_escape_filter($this->env, $this->getAttribute($context["registro"], "status", array()), "html", null, true);
             echo "</td>
-        <td><button type=\"button\" class=\"btn  btn-success\">Primary</button></td>
+        <td><a href=\"";
+            // line 47
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tarea_create", array("id" => $this->getAttribute($context["registro"], "id", array()))), "html", null, true);
+            echo "\" data-toggle=\"modal\" data-target=\"#exampleModal\"><i class=\"fas fa-edit\"></i></a>
+        <a href=\"";
+            // line 48
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tarea_delete", array("id" => $this->getAttribute($context["registro"], "id", array()))), "html", null, true);
+            echo "\"><i class=\"fas fa-trash-alt\"></i></i></a></td>
            
       </tr>
     ";
@@ -124,12 +129,12 @@ class __TwigTemplate_da93ca26a698afe539b81607c346a65315b4cfc36cad74c454cb7048d31
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['registro'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 51
+        // line 52
         echo "      
   </tbody>
 </table>
 ";
-        // line 55
+        // line 56
         echo "<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">
   <div class=\"modal-dialog\" role=\"document\">
     <div class=\"modal-content\">
@@ -141,18 +146,18 @@ class __TwigTemplate_da93ca26a698afe539b81607c346a65315b4cfc36cad74c454cb7048d31
       </div>
       <div class=\"modal-body\">
           ";
-        // line 65
+        // line 66
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("action" => "", "method" => "POST"));
         echo "
           ";
-        // line 66
+        // line 67
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
         echo "
         
       </div>
       <div class=\"modal-footer\">
         ";
-        // line 70
+        // line 71
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
       </div>
@@ -160,32 +165,32 @@ class __TwigTemplate_da93ca26a698afe539b81607c346a65315b4cfc36cad74c454cb7048d31
   </div>
 </div>
 ";
-        // line 76
+        // line 77
         echo "
 ";
         
-        $__internal_5394a752b06925d6f55a1f450ebf744a2b241dd0983ad135c36122765c2ddf95->leave($__internal_5394a752b06925d6f55a1f450ebf744a2b241dd0983ad135c36122765c2ddf95_prof);
+        $__internal_cbeece44660beb931e03064f53650c45dff37fca074944142870f373f99a35cc->leave($__internal_cbeece44660beb931e03064f53650c45dff37fca074944142870f373f99a35cc_prof);
 
     }
 
-    // line 79
+    // line 80
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_a0862b0c4726017b1b9049ec899628a454e2a03d2cc6014ea7fb7f2342244f43 = $this->env->getExtension("native_profiler");
-        $__internal_a0862b0c4726017b1b9049ec899628a454e2a03d2cc6014ea7fb7f2342244f43->enter($__internal_a0862b0c4726017b1b9049ec899628a454e2a03d2cc6014ea7fb7f2342244f43_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_f4bdbdc2f7f0adc9fd6a8f2c2a351d45badff8ed801da1ab1f56e1c1a1f3e4cf = $this->env->getExtension("native_profiler");
+        $__internal_f4bdbdc2f7f0adc9fd6a8f2c2a351d45badff8ed801da1ab1f56e1c1a1f3e4cf->enter($__internal_f4bdbdc2f7f0adc9fd6a8f2c2a351d45badff8ed801da1ab1f56e1c1a1f3e4cf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 80
+        // line 81
         echo "  ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
 
   <script src=\"";
-        // line 82
+        // line 83
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/framework/js/popup.js"), "html", null, true);
         echo "\"></script>
 ";
         
-        $__internal_a0862b0c4726017b1b9049ec899628a454e2a03d2cc6014ea7fb7f2342244f43->leave($__internal_a0862b0c4726017b1b9049ec899628a454e2a03d2cc6014ea7fb7f2342244f43_prof);
+        $__internal_f4bdbdc2f7f0adc9fd6a8f2c2a351d45badff8ed801da1ab1f56e1c1a1f3e4cf->leave($__internal_f4bdbdc2f7f0adc9fd6a8f2c2a351d45badff8ed801da1ab1f56e1c1a1f3e4cf_prof);
 
     }
 
@@ -201,7 +206,7 @@ class __TwigTemplate_da93ca26a698afe539b81607c346a65315b4cfc36cad74c454cb7048d31
 
     public function getDebugInfo()
     {
-        return array (  184 => 82,  178 => 80,  172 => 79,  164 => 76,  156 => 70,  149 => 66,  145 => 65,  133 => 55,  128 => 51,  117 => 46,  113 => 45,  109 => 44,  105 => 43,  101 => 42,  95 => 40,  91 => 39,  59 => 9,  53 => 8,  45 => 5,  39 => 4,  32 => 1,  30 => 2,  11 => 1,);
+        return array (  189 => 83,  183 => 81,  177 => 80,  169 => 77,  161 => 71,  154 => 67,  150 => 66,  138 => 56,  133 => 52,  123 => 48,  119 => 47,  115 => 46,  111 => 45,  107 => 44,  103 => 43,  99 => 42,  95 => 40,  91 => 39,  59 => 9,  53 => 8,  45 => 5,  39 => 4,  32 => 1,  30 => 2,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -243,14 +248,15 @@ class __TwigTemplate_da93ca26a698afe539b81607c346a65315b4cfc36cad74c454cb7048d31
 /*   </thead>*/
 /*   <tbody>*/
 /*     {% for registro in registros %}*/
-/*       <tr id="registro" data-id="{{registro.id}}">*/
-/*             */
+/*       <tr id="registro">*/
+/*          */
 /*         <td>{{ registro.title }}</td>*/
 /*         <td>{{ registro.descripcion }}</td>*/
 /*         <td>{{ registro.fecha|date("m/d/y")}}</td>*/
 /*         <td>{{ registro.prioridad }}</td>*/
 /*         <td>{{ registro.status }}</td>*/
-/*         <td><button type="button" class="btn  btn-success">Primary</button></td>*/
+/*         <td><a href="{{path('tarea_create', {'id':registro.id})}}" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-edit"></i></a>*/
+/*         <a href="{{path('tarea_delete', {'id':registro.id})}}"><i class="fas fa-trash-alt"></i></i></a></td>*/
 /*            */
 /*       </tr>*/
 /*     {% endfor %}*/

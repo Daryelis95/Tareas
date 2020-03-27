@@ -22,13 +22,55 @@ class RegistroController extends Controller {
     }
   
     /**
-     * @Route("/create", name="tarea_create")
+     * @Route("/create/{id}", name="tarea_create")
      */
 
     //recuperar datos del formulario y crea el registro en bd
-    public function createAction(Request $request)
-    {
+    public function createAction(Request $request , $id=null)
+    {   
+        if($id){
+            //mostrar DATOS de la db
+          $repository = $this->getDoctrine()->getRepository(Registro::class);
+          // find *all* registro
+          $registro = $repository->find($id);
+        } else{
+            $registro = new Registro();
+        }
         
+
+         $form = $this->createForm(RegistroType::class,$registro);
+         //$_GET , $_POST
+         $form->handleRequest($request);
+
+
+          if ($form->isSubmitted() && $form->isValid()) {
+  
+            $registro = $form->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            //guardar registro
+            $em->persist($registro);
+            // en realidad ejecuta las consultas (es decir, la consulta INSERT)
+            $em->flush();
+
+            return $this->redirectToRoute('tarea_create');
+          }   
+          
+          //mostrar DATOS de la db
+          $repository = $this->getDoctrine()->getRepository('TareaBundle:Registro');
+          // find *all* registro
+          $registro = $repository->findAll();
+
+          return $this->render('TareaBundle:Default:index.html.twig', 
+          array('form' => $form->createView(),
+          "registros"=>$registro
+          ));
+    }
+    /**
+     * @Route("/mostrar", name="tarea_mostrar")
+     */
+    public function mostrarAction(Request $request )
+    {
         $registro = new Registro();
 
          $form = $this->createForm(RegistroType::class,$registro);
@@ -60,24 +102,30 @@ class RegistroController extends Controller {
     }
    
    /**
-     * @Route("/update/{id}/{status}" , name="tarea_update")
+     * @Route("/update/{id}" , name="tarea_update")
    */
-    public function updateAction($id , $status)
+    public function updateAction($id)
    {
-    $entityManager = $this->getDoctrine()->getManager();
-    $registro = $entityManager->getRepository(Registro::class)->find($id);
+
+          // find *all* registro
+    $repository = $this->getDoctrine()->getRepository(Registro::class);
+    $registro = $repository->find($id);
+
+    
 
     if (!$registro) {
         throw $this->createNotFoundException(
             'No existe el registro '.$id
         );
     }
-
-    $registro->setstatus($status);
-
+    
+    
+    $em = $this->getDoctrine()->getManager();
+    //guardar registro
+    $em->persist($registro);
     $entityManager->flush();
 
-    return $this->redirectToRoute('tarea_mostrar', [
+    return $this->redirectToRoute('tarea_create', [
         'id' => $registro->getId()
     ]);
    }
@@ -86,21 +134,17 @@ class RegistroController extends Controller {
    */
    public function deleteAction($id)
    { 
+      if($id){
+          // buscar registros
+        $repository = $this->getDoctrine()->getRepository(Registro::class);
+        $registro = $repository->find($id);
+        // Eliminar Registro
+        $ent = $this->getDoctrine()->getManager();
+        $ent->remove($registro);
+        $ent->flush();
+      }
 
-    $ent = $this->getDoctrine()->getManager();
-    $registro = $ent->getRepository(Registro::class)->find($id);
-
-    if (!$registro) {
-        throw $this->createNotFoundException(
-            'No existe el registro  con id:'.$id
-        );
-    }
-      $ent->remove($registro);
-      $ent->flush();
-
-      return $this->redirectToRoute('tarea_mostrar', [
-        'id' => $registro->getId()
-       ]);
+      return $this->redirectToRoute('tarea_create');
     
    }
     
