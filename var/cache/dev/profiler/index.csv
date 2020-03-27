@@ -849,3 +849,10 @@ d75318,127.0.0.1,GET,http://localhost:8000/tarea/create,1585328436,,404
 b5297c,127.0.0.1,GET,http://localhost:8000/tarea/create/2,1585328776,a841e0,200
 a841e0,127.0.0.1,POST,http://localhost:8000/tarea/create/2,1585328776,,500
 62e5fb,127.0.0.1,GET,http://localhost:8000/tarea/create/2,1585328784,,200
+23322f,127.0.0.1,GET,http://localhost:8000/tarea/delete/12,1585329326,bb0d97,200
+bb0d97,127.0.0.1,GET,http://localhost:8000/tarea/delete/12,1585329326,,500
+e825ea,127.0.0.1,GET,http://localhost:8000/tarea/mostrar,1585329374,,200
+c1220e,127.0.0.1,GET,http://localhost:8000/tarea/delete/3,1585329384,,302
+933849,127.0.0.1,GET,http://localhost:8000/tarea/mostrar,1585329385,,200
+2a3448,127.0.0.1,GET,http://localhost:8000/tarea/mostrar,1585329871,,200
+d329d9,127.0.0.1,GET,http://localhost:8000/tarea/mostrar,1585330192,,200

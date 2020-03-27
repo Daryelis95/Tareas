@@ -112,8 +112,8 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 }
 
                 // tarea_create
-                if (0 === strpos($pathinfo, '/tarea/create') && preg_match('#^/tarea/create/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'tarea_create')), array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::createAction',));
+                if ($pathinfo === '/tarea/create') {
+                    return array (  '_controller' => 'TareaBundle\\Controller\\RegistroController::createAction',  '_route' => 'tarea_create',);
                 }
 
                 // tarea_mostrar

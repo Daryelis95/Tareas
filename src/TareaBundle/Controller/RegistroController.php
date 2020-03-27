@@ -22,21 +22,14 @@ class RegistroController extends Controller {
     }
   
     /**
-     * @Route("/create/{id}", name="tarea_create")
+     * @Route("/create", name="tarea_create")
      */
 
     //recuperar datos del formulario y crea el registro en bd
-    public function createAction(Request $request , $id=null)
+    public function createAction(Request $request )
     {   
-        if($id){
-            //mostrar DATOS de la db
-          $repository = $this->getDoctrine()->getRepository(Registro::class);
-          // find *all* registro
-          $registro = $repository->find($id);
-        } else{
-            $registro = new Registro();
-        }
-        
+       
+        $registro = new Registro();
 
          $form = $this->createForm(RegistroType::class,$registro);
          //$_GET , $_POST
@@ -107,27 +100,23 @@ class RegistroController extends Controller {
     public function updateAction($id)
    {
 
-          // find *all* registro
-    $repository = $this->getDoctrine()->getRepository(Registro::class);
-    $registro = $repository->find($id);
-
+        $em = $this->getDoctrine()->getManager();
+        $product = $em->getRepository('TareaBundle:Registro')->find($id);
     
 
-    if (!$registro) {
+       if (!$registro) {
         throw $this->createNotFoundException(
             'No existe el registro '.$id
-        );
-    }
-    
-    
-    $em = $this->getDoctrine()->getManager();
-    //guardar registro
-    $em->persist($registro);
-    $entityManager->flush();
+         );
+       }
+       
+       
+        $em->flush();
 
-    return $this->redirectToRoute('tarea_create', [
-        'id' => $registro->getId()
-    ]);
+        return $this->render('TareaBundle:Default:index.html.twig', 
+          array('form' => $form->createView(),
+          "registros"=>$registro
+          ));
    }
   /**
      * @Route("/delete/{id}" , name="tarea_delete")
@@ -144,7 +133,7 @@ class RegistroController extends Controller {
         $ent->flush();
       }
 
-      return $this->redirectToRoute('tarea_create');
+      return $this->redirectToRoute('tarea_mostrar');
     
    }
     

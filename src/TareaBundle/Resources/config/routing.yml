@@ -4,7 +4,7 @@ tarea_homepage:
 
 
 tarea_create:
-    path:     /create/{id}
+    path:     /create
     defaults: { _controller: TareaBundle:Registro:create }
 
 
